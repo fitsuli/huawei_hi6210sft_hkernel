@@ -1,0 +1,13 @@
+config ASMP
+    bool "Multi-core automatic hotplug support (ASMP)"
+    depends on SMP
+    default n
+    help
+      Automatically hotplugs the multiple cpu cores on and off
+      based on cpu load and suspend state
+
+config POWERSUSPEND_NEW
+    bool "New powersuspend"
+    depends on ASMP && POWERSUSPEND
+    default y
+
